@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
 
 class HomeController extends Controller
 {
@@ -59,7 +60,8 @@ class HomeController extends Controller
     }
     public function tables()
     {
-        return view('admin.tables');
+        $data = Student::all();
+        return view('admin.tables', compact('data'));
     }
     public function dynamic()
     {
@@ -147,6 +149,7 @@ class HomeController extends Controller
         return view('admin.login_page');
     }  public function pricing_tables()
     {
+
         return view('admin.pricing_tables');
     }  public function level2()
     {

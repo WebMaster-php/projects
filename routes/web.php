@@ -64,4 +64,8 @@ Route::get('/plain_page', 'HomeController@plain_page')->name('plain_page');
 Route::get('/login_page', 'HomeController@login_page')->name('login_page');
 Route::get('/pricing_tables', 'HomeController@pricing_tables')->name('pricing_tables');
 Route::get('/level2', 'HomeController@level2')->name('level2');
+Route::post('/post-student', 'StudentController@store');
+Route::get('/student/{regno}/delete','StudentController@destroy')->name('student.destroy');
+Route::get('/student/{regno}/edit','StudentController@edit')->name('student.edit');
+Route::post('/student/update','StudentController@update')->name('student.update');
 

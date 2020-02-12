@@ -69,33 +69,34 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" action="{{url('post-student')}}" method="POST" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+                   <?php //echo "<pre>"; print_r($student);exit;?>
+                    <form id="demo-form2" action="{{route('student.update')}}" method="POST" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
                     {{ csrf_field() }}
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="regno">Reg No <span class="required" style="color:red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="regno" name="regno" required="required" class="form-control ">
+                          <input type="text" id="regno" name="regno" required="required" value = "{{$student[0]['regno']}}" class="form-control ">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Full Name <span class="required" style="color:red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="name" name="name" required="required" class="form-control ">
+                          <input type="text" id="name" name="name" required="required" value = "{{$student[0]['name']}}" class="form-control ">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="father-name">Father Name <span class="required" style="color:red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="father_name" name="father_name" required="required" class="form-control">
+                          <input type="text" id="father_name" name="father_name" value = "{{$student[0]['father_name']}}" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Phone No<span class="required" style="color:red">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="phone_no" class="form-control" type="text" name="phone_no" required="required">
+                          <input id="phone_no" class="form-control" type="text" name="phone_no"value = "{{$student[0]['phone_no']}}" required="required">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -115,14 +116,14 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required" style="color:red">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="birthday" class="date-picker form-control" name="birthday" required="required" type="date">
+                          <input id="birthday" class="date-picker form-control" name="birthday" value = "{{$student[0]['birthday']}}" required="required" type="date">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Image 
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="image" class="date-picker form-control" name="image" required="required" type="File">
+                          <input id="image" class="date-picker form-control" name="image" value = "{{$student[0]['image']}}" required="required" type="File">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

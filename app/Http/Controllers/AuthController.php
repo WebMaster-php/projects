@@ -32,9 +32,9 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('admin.index')->with('sucess','login successfully!');
+            return redirect()->intended('dashboard')->with('sucess','login successfully!');
         }
-        return Redirect::to("admin.login_page")->with('error','You have no permission for this page!');
+        return Redirect::to("login")->with('error','You have no permission for this page!');
 }
 
  
@@ -50,7 +50,7 @@ class AuthController extends Controller
  
         $check = $this->create($data);
        
-        return Redirect::to("admin.index")->withSuccess('Great! You have Successfully loggedin');
+        return Redirect::to("dashboard")->withSuccess('Great! You have Successfully loggedin');
     }
      
     public function dashboard()
